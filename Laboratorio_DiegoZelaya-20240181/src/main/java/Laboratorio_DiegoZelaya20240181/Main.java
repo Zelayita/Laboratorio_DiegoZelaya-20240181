@@ -45,7 +45,6 @@ public class Main {
                     System.out.println("Introduzca el ID del Contacto que desea Buscar:");
                     int Contact = sc.nextInt();
                     System.out.println("EL Contacto es: " + contactos.get(Contact).toString());
-
                     break;
                 case 4:
                     //Contacto que se desea Eliminar
