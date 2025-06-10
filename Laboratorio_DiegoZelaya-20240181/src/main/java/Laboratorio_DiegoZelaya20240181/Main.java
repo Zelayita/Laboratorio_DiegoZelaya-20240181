@@ -42,11 +42,9 @@ public class Main {
                     break;
                 case 3:
                     //Buscar por nombre
-                    System.out.println("Introduzca el Nombre del Contacto que desea Buscar:");
+                    System.out.println("Introduzca el ID del Contacto que desea Buscar:");
                     int Contact = sc.nextInt();
-                    contactos.get(Contact);
-
-
+                    System.out.println("EL Contacto es: " + contactos.get(Contact).toString());
 
                     break;
                 case 4:
