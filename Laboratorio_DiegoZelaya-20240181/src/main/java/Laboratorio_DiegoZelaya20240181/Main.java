@@ -12,7 +12,7 @@ public class Main {
         boolean respuesta = false;
 
         while(!respuesta){
-            System.out.println("*******Bienvenidos a Agenda de Contactos*******");
+            System.out.println("Bienvenido a tu Agenda");
             System.out.println("1.Agregar Contacto ");
             System.out.println("2. Mostrar Contactos");
             System.out.println("3. Buscar por Nombre el Contacto");
@@ -21,6 +21,7 @@ public class Main {
             int respuesta1 = sc.nextInt();
             switch(respuesta1){
                 case 1:
+                    //Crear un Contacto
                     System.out.println("Introduzca el id de la nueva Persona que desea Agregar");
                     int IdPersona = sc.nextInt();
                     sc.nextLine();
@@ -29,47 +30,50 @@ public class Main {
                     contactos.put(IdPersona, Nombre);
                     sc.nextLine();
                     System.out.println("Se acaba de Agregar su Contacto");
-                    int puesta = sc.nextInt();
-                    sc.nextLine();
                     break;
                 case 2:
+                    //Mostrar los contactos de Forma Ordenada
                     System.out.println("Se Mostrara los Contacto Ordenados");
+                    System.out.println("****************************************************");
                     for (Map.Entry<Integer, String> mapa : contactos.entrySet()){
                         System.out.println("Clave: "+ mapa.getKey()+ " Nombre: "+ mapa.getValue());
                     }
-                    int puesta2 = sc.nextInt();
-                    sc.nextLine();
+                    System.out.println("****************************************************");
                     break;
                 case 3:
+                    //Buscar por nombre
                     System.out.println("Introduzca el Nombre del Contacto que desea Buscar:");
-                    String ContactName = sc.next();
+                    int Contact = sc.nextInt();
+                    contactos.get(Contact);
 
 
 
-
-                    int puesta3 = sc.nextInt();
-                    sc.nextLine();
                     break;
                 case 4:
+                    //Contacto que se desea Eliminar
                     System.out.println("Contacto que desea Eliminar");
                     int ID = sc.nextInt();
                     contactos.remove(ID);
                     sc.nextLine();
                     System.out.println("Esta Bien asi");
+                    System.out.println("****************************************************");
                     for (Map.Entry<Integer, String> mapa : contactos.entrySet()){
                         System.out.println("Clave: "+ mapa.getKey()+ " Nombre: "+ mapa.getValue());
                     }
-                    int puesta4 = sc.nextInt();
-                    sc.nextLine();
+                    System.out.println("****************************************************");
                     break;
                 case 5:
+                    //Salir de la App contactos
                     respuesta = true;
                     System.out.println("Se acaba de Salir de la Agenda");
-                    int puesta5 = sc.nextInt();
-                    sc.nextLine();
                     break;
+
                 default:
-                    System.out.println("Solo numero entre 1 y 4");
+                    System.out.println("Desea salir?");
+                    String checksalir = sc.next();
+                    if (checksalir == "ok" || checksalir == "si"){
+                        respuesta = false;
+                    }
                     break;
             }
 
